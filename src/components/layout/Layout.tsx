@@ -2,15 +2,16 @@ import { ReactNode } from "react";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { motion } from "framer-motion";
+import Sidebar from "../Sidebar";
 
 interface LayoutProps {
   children: ReactNode;
+  showSidebar?: boolean;
 }
 
-const Layout = ({ children }: LayoutProps) => {
+const Layout = ({ children, showSidebar = true }: LayoutProps) => {
   return (
     <div className="min-h-screen flex flex-col">
-      <Navbar />
       <motion.main
         className="flex-grow"
         initial={{ opacity: 0 }}
